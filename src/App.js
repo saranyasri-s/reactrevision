@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import classes from "./App.module.css";
+import Message from "./components/Message";
+import { Fragment } from "react";
 function App() {
+  const items = ["coimbatore", "chennai", "mumbai"];
+  if (items.length === 0) {
+    return <p>Notjing to show</p>;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <h1>hello world</h1>
+      <div className={classes.App}>
+        <header>Learn React</header>
+        <header>Learn React</header>
+        <header>Learn React</header>
+        <header>Learn React</header>
+        <header>Learn React</header>
+        <header>Learn React</header>
+        {items.map((item) => (
+          <p key={item}>this is {item}</p>
+        ))}
+        <Message />
+        {items.length !== 3 ? <p>There is more to learn</p> : <p>saranua</p>}
+      </div>
+    </Fragment>
   );
 }
 
