@@ -1,0 +1,9 @@
+.selected {
+    color: blue;
+    font-size: 19px;
+    font-weight: 400;
+  }
+  .notActive {
+    color: orange;
+  }
+  

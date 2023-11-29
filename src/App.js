@@ -1,13 +1,12 @@
 import classes from "./App.module.css";
 import Message from "./components/Message";
-import { Fragment,useState } from "react";
+import { Fragment, useState } from "react";
 function App() {
   const items = ["coimbatore", "chennai", "mumbai"];
-  const [itemName,setItemName]=useState("chennai")
-  const handleClick=(e,item)=>{
-    e.preventDefault();
-    setItemName(item)
-  }
+  const [itemName, setItemName] = useState("chennai");
+  const handleClick = (item) => {
+    setItemName(item);
+  };
   if (items.length === 0) {
     return <p>Notjing to show</p>;
   }
@@ -21,10 +20,12 @@ function App() {
         <header>Learn React</header>
         <header>Learn React</header>
         <header>Learn React</header>
-        {items.map((item) => (
-          <p key={item} className={item===itemName? classes.selected: classes.notActive} onClick={(e)=>handleClick(e,item)}>this is {item}</p>
-        ))}
-        <Message />
+
+        <Message
+          items={items}
+          itemName={itemName}
+          handleClick={(item) => handleClick(item)}
+        />
         {items.length !== 3 ? <p>There is more to learn</p> : <p>saranua</p>}
       </div>
     </Fragment>
