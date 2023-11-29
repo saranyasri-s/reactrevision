@@ -3,7 +3,8 @@ import classes from "./Message.module.css";
 function Message(props) {
   return (
     <div>
-      {props.items.map((item) => (
+      <button onClick={() => props.clicked()}>Click me</button>
+      {/* {props.items.map((item) => (
         <p
           key={item}
           className={
@@ -13,7 +14,7 @@ function Message(props) {
         >
           this is {item}
         </p>
-      ))}
+      ))} */}
     </div>
   );
 }
