@@ -10,8 +10,14 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import Faq from "./components/Faq";
+import About from "./components/About";
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<App />} />)
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route path="about" element={<About />} />
+    </Route>
+  )
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
